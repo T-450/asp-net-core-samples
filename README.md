@@ -8,7 +8,11 @@ You`ll need [.Net Core 6.0](https://dotnet.microsoft.com/en-us/download).
 
 ## Usage
 
-Open on your favorite code editor dotnet run "path-to-csproj" <args?>
+Open on your favorite code editor and type:
+
+```shell
+dotnet run "path-to-csproj"
+```
 
 ## Contributing
 
