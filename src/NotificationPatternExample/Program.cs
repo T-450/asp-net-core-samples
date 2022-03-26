@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NotificationPatternExample.Business;
 using NotificationPatternExample.Business.Interfaces;
 using NotificationPatternExample.Business.Notifications;
 using DbContext = NotificationPatternExample.Data.DbContext;
@@ -18,11 +19,14 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });
 
 builder.Services.AddScoped<INotificator, Notificator>();
+builder.Services.AddScoped<ProductService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
+{
     ;
+}
 //app.UseSwagger();
 //app.UseSwaggerUI();
 
