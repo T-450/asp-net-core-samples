@@ -1,8 +1,9 @@
 ﻿using FluentValidation;
+using FluentValidation.Results;
 
 namespace NotificationPatternExample.Business.Models.Validations;
 
-public class ProductValidation : BaseValidation<Product>
+public class ProductValidation : AbstractValidator<Product>
 {
     public ProductValidation()
     {
@@ -18,5 +19,12 @@ public class ProductValidation : BaseValidation<Product>
 
         RuleFor(c => c.Price)
             .GreaterThan(0).WithMessage("The field {PropertyName} must be greater than {ComparisonValue}");
+    }
+
+    public new (bool isValid, IEnumerable<Notification> errors) Validate(Product product)
+    {
+        var result = base.Validate(product);
+        var errors = result.Errors ?? new List<ValidationFailure>();
+        return (result.IsValid, errors.Select(e => new Notification(e.ErrorMessage)));
     }
 }

@@ -22,13 +22,7 @@ public class ProductViewModel
 
     public Product ToModel()
     {
-        var product = new Product
-        {
-            Name = Name,
-            Description = Description,
-            Price = Price,
-            InStock = InStock
-        };
+        var product = new Product {Name = Name, Description = Description, Price = Price, InStock = InStock};
         return product;
     }
 }

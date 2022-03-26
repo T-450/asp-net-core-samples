@@ -6,6 +6,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <Optimize>true</Optimize>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" Version="10.4.0"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.3"/>
@@ -23,21 +28,26 @@
     <Compile Remove="Validations\**"/>
     <Compile Remove="WeatherForecast.cs"/>
     <Compile Remove="Extensions\**"/>
+    <Compile Remove="Business\Models\BaseValidation.cs"/>
+    <Compile Remove="Validators\**"/>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Remove="Validations\**"/>
     <EmbeddedResource Remove="Extensions\**"/>
+    <EmbeddedResource Remove="Validators\**"/>
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Validations\**"/>
     <None Remove="Extensions\**"/>
+    <None Remove="Validators\**"/>
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="Validations\**"/>
     <Content Remove="Extensions\**"/>
+    <Content Remove="Validators\**"/>
   </ItemGroup>
 
 </Project>

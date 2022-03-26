@@ -22,7 +22,7 @@ public class Notificator : INotificator
         _notifications.AddRange(notifications);
     }
 
-    public List<Notification> GetNotification()
+    public List<Notification> GetNotifications()
     {
         return _notifications;
     }

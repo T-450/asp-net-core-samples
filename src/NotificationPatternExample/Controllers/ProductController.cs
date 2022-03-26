@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using NotificationPatternExample.Business;
 using NotificationPatternExample.Business.Interfaces;
 using NotificationPatternExample.Business.Models;
-using NotificationPatternExample.Validators;
 using NotificationPatternExample.ViewModels;
-using DbContext = NotificationPatternExample.Data.DbContext;
 
 namespace NotificationPatternExample.Controllers;
 
@@ -12,12 +11,12 @@ namespace NotificationPatternExample.Controllers;
 [ApiController]
 public class ProductController : ControllerBase
 {
-    private readonly DbContext _context;
     private readonly INotificator _notificator;
+    private readonly ProductService _productService;
 
-    public ProductController(DbContext context, INotificator notificator)
+    public ProductController(INotificator notificator, ProductService productService)
     {
-        (_context, _notificator) = (context, notificator);
+        (_notificator, _productService) = (notificator, productService);
     }
 
     [HttpGet]
@@ -25,8 +24,9 @@ public class ProductController : ControllerBase
     {
         try
         {
-            var products = await _context.Products.AsNoTracking().ToListAsync();
-            return Ok(products);
+            var products = await _productService.List().ConfigureAwait(false);
+            var viewModels = products.Select(p => p.ToViewModel());
+            return Ok(viewModels);
         }
         catch (Exception e)
         {
@@ -44,18 +44,17 @@ public class ProductController : ControllerBase
         {
             if (!ModelState.IsValid)
             {
-                var errors = ModelState.Values
-                    .SelectMany(v => v.Errors.Select(e => e.ErrorMessage));
-                return BadRequest(errors);
+                var errorList = PullErrors(ModelState);
+                return BadRequest(errorList);
             }
 
             var productModel = productViewModel.ToModel();
-            var isValidProduct = Validator.Validate(productModel);
-            if (!isValidProduct)
-                return BadRequest(_notificator.GetNotification());
+            await _productService.Add(productModel).ConfigureAwait(false);
+            if (_notificator.HasNotification())
+            {
+                return BadRequest(_notificator.GetNotifications());
+            }
 
-            _context.Products.Add(productModel);
-            await _context.SaveChangesAsync();
             return Ok(productViewModel);
         }
         catch (Exception e)
@@ -65,5 +64,12 @@ public class ProductController : ControllerBase
                 "The house is burning down!"
             );
         }
+    }
+
+    private static IEnumerable<Notification> PullErrors(ModelStateDictionary modelStateDictionary)
+    {
+        return modelStateDictionary.Values
+            .SelectMany(v =>
+                v.Errors.Select(e => new Notification(e.ErrorMessage)));
     }
 }
