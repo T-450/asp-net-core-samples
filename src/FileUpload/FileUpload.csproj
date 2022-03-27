@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3"/>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Uploads"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Uploads\e697ddcc-5dfb-4e34-b91b-47005e40dc7a.jpg"/>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationPatternExample", "NotificationPatternExample\NotificationPatternExample.csproj", "{D8A9665C-8CB7-4D96-A30C-EFFF8A459512}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload", "FileUpload\FileUpload.csproj", "{5433969F-B281-40F1-A45C-B46629C9DE8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8A9665C-8CB7-4D96-A30C-EFFF8A459512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A9665C-8CB7-4D96-A30C-EFFF8A459512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A9665C-8CB7-4D96-A30C-EFFF8A459512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A9665C-8CB7-4D96-A30C-EFFF8A459512}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5433969F-B281-40F1-A45C-B46629C9DE8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5433969F-B281-40F1-A45C-B46629C9DE8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5433969F-B281-40F1-A45C-B46629C9DE8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5433969F-B281-40F1-A45C-B46629C9DE8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
