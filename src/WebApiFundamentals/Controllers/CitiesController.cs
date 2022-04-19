@@ -9,7 +9,8 @@ namespace WebApiFundamentals.Controllers;
 
 [ApiController]
 [Authorize]
-[Route("api/cities")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/cities")]
 public class CitiesController : ControllerBase
 {
     private const int MaxCitiesPageSize = 20;
@@ -42,7 +43,17 @@ public class CitiesController : ControllerBase
         return Ok(_mapper.Map<IEnumerable<CityWithoutPointsOfInterestDto>>(cityEntities));
     }
 
-    [HttpGet("{id}")]
+    /// <summary>
+    ///     Get a city by id
+    /// </summary>
+    /// <param name="id">The id of the city to get</param>
+    /// <param name="includePointsOfInterest">Whether or not to include the points of interest</param>
+    /// <returns>An IActionResult</returns>
+    /// <response code="200">Returns the requested city</response>
+    [HttpGet("{id:int}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> GetCity(int id, bool includePointsOfInterest = false)
     {
         var city = await _cityInfoRepository.GetCityAsync(id, includePointsOfInterest).ConfigureAwait(false);
