@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationPatternExample"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload", "FileUpload\FileUpload.csproj", "{5433969F-B281-40F1-A45C-B46629C9DE8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiFundamentals", "WebApiFundamentals\WebApiFundamentals.csproj", "{FDC9D3EA-980F-4AA8-8C0C-C7323CE4E603}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{5433969F-B281-40F1-A45C-B46629C9DE8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5433969F-B281-40F1-A45C-B46629C9DE8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5433969F-B281-40F1-A45C-B46629C9DE8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC9D3EA-980F-4AA8-8C0C-C7323CE4E603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC9D3EA-980F-4AA8-8C0C-C7323CE4E603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC9D3EA-980F-4AA8-8C0C-C7323CE4E603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC9D3EA-980F-4AA8-8C0C-C7323CE4E603}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
