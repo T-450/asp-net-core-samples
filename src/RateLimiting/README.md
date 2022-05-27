@@ -151,7 +151,7 @@ You can see a working example [here](https://github.com/edward-teixeira/asp-net-
 Links:
 - [The NEW Rate Limiter of .NET 7 is AWESOME](http://obsidian.md)
 - [DOS - Denial of Service](https://en.wikipedia.org/wiki/Denial-of-service_attack)
-- [What is IaaS?](https://azure.microsoft.com/en-us/overview/what-is-iaas/#:~:text=Infrastructure%20as%20a%20service%20(IaaS,(PaaS)%2C%20and%20serverless.)
+- [What is IaaS?](https://azure.microsoft.com/en-us/overview/what-is-iaas)
 - [Rate Limiting in ASP.NET Core Web API](https://code-maze.com/aspnetcore-web-api-rate-limiting/)
 - [How to Design a Scalable Rate Limiting Algorithm with Kong API](https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm)
 - [Source](https://github.com/edward-teixeira/asp-net-core-samples/tree/master/src/RateLimiting);
