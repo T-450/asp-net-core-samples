@@ -154,5 +154,4 @@ Links:
 - [What is IaaS?](https://azure.microsoft.com/en-us/overview/what-is-iaas/#:~:text=Infrastructure%20as%20a%20service%20(IaaS,(PaaS)%2C%20and%20serverless.)
 - [Rate Limiting in ASP.NET Core Web API](https://code-maze.com/aspnetcore-web-api-rate-limiting/)
 - [How to Design a Scalable Rate Limiting Algorithm with Kong API](https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm)
-Source:
-[Code](https://github.com/edward-teixeira/asp-net-core-samples/tree/master/src/RateLimiting);
+- [Source](https://github.com/edward-teixeira/asp-net-core-samples/tree/master/src/RateLimiting);
