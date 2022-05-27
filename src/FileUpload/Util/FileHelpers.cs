@@ -310,8 +310,11 @@ public class FileHelpers
         return mediaType.Encoding;
     }
 
-    public readonly struct FileSignatures
+    private readonly struct FileSignatures
     {
+        public FileSignatures()
+        {
+        }
         // For more file signatures, see the File Signatures Database (https://www.filesignatures.net/)
         // and the official specifications for the file types you wish to add.
 

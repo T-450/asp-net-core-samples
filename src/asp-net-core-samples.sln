@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload", "FileUpload\Fi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiFundamentals", "WebApiFundamentals\WebApiFundamentals.csproj", "{FDC9D3EA-980F-4AA8-8C0C-C7323CE4E603}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateLimiting", "RateLimiting\RateLimiting.csproj", "{7C77EAAE-CD43-4355-BCDD-0C153B87BEAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{FDC9D3EA-980F-4AA8-8C0C-C7323CE4E603}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDC9D3EA-980F-4AA8-8C0C-C7323CE4E603}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDC9D3EA-980F-4AA8-8C0C-C7323CE4E603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C77EAAE-CD43-4355-BCDD-0C153B87BEAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C77EAAE-CD43-4355-BCDD-0C153B87BEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C77EAAE-CD43-4355-BCDD-0C153B87BEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C77EAAE-CD43-4355-BCDD-0C153B87BEAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
