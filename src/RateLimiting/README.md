@@ -1,8 +1,4 @@
-﻿Status: #doing
-Tags: #dotNet #apiDesign #designPatterns #rateLimiting
-Created: 2022-05-26 19:05
-
---- ### What is Rate Limiting?
+### What is Rate Limiting?
 The process of restricting the number of requests for a resource within a specific time window.
 
 ### Why use Rate Limiting?
@@ -150,7 +146,7 @@ app.Run();
 
 Now you can make requests to your endpoint and see if it works.
 
-You can see a working example here [Link para o repositorio]('');
+You can see a working example [here](https://github.com/edward-teixeira/asp-net-core-samples/tree/master/src/RateLimiting);
 
 ---
 Links:
@@ -160,5 +156,4 @@ Links:
 [Rate Limiting in ASP.NET Core Web API](https://code-maze.com/aspnetcore-web-api-rate-limiting/)
 [How to Design a Scalable Rate Limiting Algorithm with Kong API](https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm)
 --- Source:
-
-[Link para o repositorio]('');
+[Code](https://github.com/edward-teixeira/asp-net-core-samples/tree/master/src/RateLimiting);
