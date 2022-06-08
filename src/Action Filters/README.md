@@ -8,13 +8,13 @@
 	- **Exception filters:** They are used to handle exceptions before the response body is populated;
 	- **Result filters:** They run before and after the execution of the action methods result.
  
- Order of excution: 
+ Order of execution: 
  
   ![](https://geeksarray.com/images/blog/asp-net-core-mvc-filter-execution-sequence.png)
 
 
 ---
-Resources:
+## Resources:
 
 [How to use ASP.NET Core MVC built-in Filters](https://geeksarray.com/blog/how-to-use-asp-net-core-mvc-built-in-filters)
 
