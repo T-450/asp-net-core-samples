@@ -14,6 +14,7 @@
 
 
 ---
+
 ## Resources:
 
 [How to use ASP.NET Core MVC built-in Filters](https://geeksarray.com/blog/how-to-use-asp-net-core-mvc-built-in-filters)
@@ -27,3 +28,5 @@
 [Implementing Action Filters in ASP.NET Core](https://code-maze.com/action-filters-aspnetcore/)
 
 [action-filters-dotnetcore-webapi](https://github.com/CodeMazeBlog/action-filters-dotnetcore-webapi)
+
+[Filter Pipeline in Web API Part](https://www.youtube.com/watch?v=4cP9Vf8rKQQ)
