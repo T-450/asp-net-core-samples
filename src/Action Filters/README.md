@@ -17,8 +17,13 @@
 Resources:
 
 [How to use ASP.NET Core MVC built-in Filters](https://geeksarray.com/blog/how-to-use-asp-net-core-mvc-built-in-filters)
+
 [ASP.NET CORE ACTION ARGUMENTS VALIDATION USING AN ACTIONFILTER](https://damienbod.com/2016/09/09/asp-net-core-action-arguments-validation-using-an-actionfilter/)
+
 [Filters in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/filters?view=aspnetcore-6.0)
+
 [Recommended way to read the Request.Body in an ActionFilter](https://github.com/aspnet/Mvc/issues/5260)
+
 [Implementing Action Filters in ASP.NET Core](https://code-maze.com/action-filters-aspnetcore/)
+
 [action-filters-dotnetcore-webapi](https://github.com/CodeMazeBlog/action-filters-dotnetcore-webapi)
