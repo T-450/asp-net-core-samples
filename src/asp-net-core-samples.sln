@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiFundamentals", "WebAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateLimiting", "RateLimiting\RateLimiting.csproj", "{7C77EAAE-CD43-4355-BCDD-0C153B87BEAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientFactory", "HttpClientFactory\HttpClientFactory.csproj", "{2965ED6E-A78B-40E5-AF88-458406CF32D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientFactorySample", "HttpClientFactorySample\HttpClientFactorySample.csproj", "{2965ED6E-A78B-40E5-AF88-458406CF32D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
