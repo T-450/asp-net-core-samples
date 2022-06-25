@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiFundamentals", "WebAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateLimiting", "RateLimiting\RateLimiting.csproj", "{7C77EAAE-CD43-4355-BCDD-0C153B87BEAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientFactory", "HttpClientFactory\HttpClientFactory.csproj", "{2965ED6E-A78B-40E5-AF88-458406CF32D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{7C77EAAE-CD43-4355-BCDD-0C153B87BEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C77EAAE-CD43-4355-BCDD-0C153B87BEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C77EAAE-CD43-4355-BCDD-0C153B87BEAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2965ED6E-A78B-40E5-AF88-458406CF32D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2965ED6E-A78B-40E5-AF88-458406CF32D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2965ED6E-A78B-40E5-AF88-458406CF32D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2965ED6E-A78B-40E5-AF88-458406CF32D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
