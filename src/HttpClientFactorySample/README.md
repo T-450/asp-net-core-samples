@@ -678,8 +678,10 @@ services.Replace(ServiceDescriptor.Singleton<IHttpMessageHandlerBuilderFilter, C
 
 [Polly](https://github.com/App-vNext/Polly)
 
+[Make HTTP requests using IHttpClientFactory in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-6.0#consumption-patterns)
+
 [Asp.Net Core High Performance Logs](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/loggermessage?view=aspnetcore-2.1)
 
-[CorrelationIdDelegatingHandler, UserAgentDelegatingHandler, Open Telemetry, ] (https://rehansaeed.com/optimally-configuring-asp-net-core-httpclientfactory/)
+[CorrelationIdDelegatingHandler, UserAgentDelegatingHandler, Open Telemetry](https://rehansaeed.com/optimally-configuring-asp-net-core-httpclientfactory/)
 
 [HttpClientSample](https://github.com/RehanSaeed/HttpClientSample)
