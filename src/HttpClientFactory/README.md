@@ -1,4 +1,6 @@
-## HttpClientFactory
+# HttpClientFactory Sample
+
+## A sample ASP.NET Core project showing how to configure the HttpClientFactory
 
 More
 info [here](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests)
