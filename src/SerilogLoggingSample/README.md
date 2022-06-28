@@ -248,3 +248,5 @@ Groups a set of logical operations together for example, capturing everything in
 [Azure App Service diagnostics overview](https://docs.microsoft.com/en-us/azure/app-service/overview-diagnostics)
 
 [Using Azure App Service Diagnostics](https://app.pluralsight.com/course-player?clipId=038437bd-e2d1-41eb-a7bd-1c31b6819294)
+
+[Serilog Best Practices](https://benfoster.io/blog/serilog-best-practices/#standard-log-properties)

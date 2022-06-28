@@ -1,33 +1,34 @@
 using Serilog;
-using Serilog.Formatting.Compact;
-using ILogger = Serilog.ILogger;
+using Serilog.Events;
+using SerilogLoggingSample.Configuration;
 
-var configuration = GetConfiguration();
+// https://github.com/serilog/serilog-aspnetcore#two-stage-initialization
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .CreateBootstrapLogger();
 
-Log.Logger = CreateSerilogLogger(configuration);
-
-Log.Information("Starting up!");
+var config = GetConfiguration();
 
 try
 {
-    Log.Information("Configuring web host...");
+    Log.Information("Starting web host");
 
-    var builder = WebApplication.CreateBuilder(args);
+    var builder = WebApplication
+        .CreateBuilder(args)
+        .CreateLogger(config);
 
-    builder.Logging
-        .ClearProviders()
-        .AddSerilog(Log.Logger);
-
-// Add services to the container.
 // Uncomment to add Azure Application Insights
-// builder.Services.AddApplicationInsightsTelemetry(builder.Configuration);
-
+// builder.Services.AddApplicationInsightsTelemetry(config);
     builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 
     var app = builder.Build();
+    // correlate logs that belong to the same request
+    // app.UseMiddleware<RequestLogContextMiddleware>();
 
 // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())
@@ -35,6 +36,10 @@ try
         app.UseSwagger();
         app.UseSwaggerUI();
     }
+
+    // Note that the Serilog middleware is added after the health and metrics middleware.
+    // This is to avoid generating logs every time your health check endpoints are hit by AWS load balancers.
+    app.UseSerilogRequestLogging();
 
     app.UseHttpsRedirection();
 
@@ -56,24 +61,17 @@ finally
     Log.CloseAndFlush();
 }
 
-static IConfiguration GetConfiguration()
+static IConfigurationRoot GetConfiguration()
 {
-    var builder = new ConfigurationBuilder()
+    var config = new ConfigurationBuilder()
         .SetBasePath(Directory.GetCurrentDirectory())
         .AddJsonFile("appsettings.json", true, true)
-        .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", true, true)
-        .AddEnvironmentVariables();
+        .AddJsonFile(
+            $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json",
+            true,
+            true)
+        .AddEnvironmentVariables()
+        .Build();
 
-    return builder.Build();
-    ;
-}
-
-static ILogger CreateSerilogLogger(IConfiguration? configuration)
-{
-    // var seqServerUrl = configuration["Serilog:SeqServerUrl"];
-    // var logstashUrl = configuration["Serilog:LogstashgUrl"];
-    return new LoggerConfiguration()
-        .WriteTo.File(new RenderedCompactJsonFormatter(), "logs/logInfo.txt", rollingInterval: RollingInterval.Day)
-        .ReadFrom.Configuration(configuration)
-        .CreateLogger();
+    return config;
 }
