@@ -1,5 +1,6 @@
 using Caching;
 using Caching.Data;
+using Marvin.Cache.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,22 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ApplicationDbContext>();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+// Enable Cache Control
+builder.Services.AddResponseCaching();
+
+// Using  Marvin.Cache.Headers\
+// This library supports HTTP cache headers like Cache-Control,
+// Expires, Etag, and Last-Modified and also implements validation and expiration models.
+builder.Services.AddHttpCacheHeaders((expirationOpt) =>
+    {
+        expirationOpt.MaxAge = 65;
+        expirationOpt.CacheLocation = CacheLocation.Public;
+    },
+    (validationOpt) =>
+    {
+        validationOpt.MustRevalidate = true;
+    });
 
 var app = builder.Build();
 
@@ -37,6 +54,9 @@ else
     app.UseDeveloperExceptionPage();
     app.UseMigrationsEndPoint();
 }
+
+app.UseResponseCaching();
+app.UseHttpCacheHeaders();
 
 app.UseHttpsRedirection();
 

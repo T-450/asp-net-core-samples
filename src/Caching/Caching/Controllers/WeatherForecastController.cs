@@ -1,3 +1,4 @@
+using Marvin.Cache.Headers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Caching.Controllers
@@ -14,10 +15,13 @@ namespace Caching.Controllers
             _context = context;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet]
+        // [ResponseCache(Duration = 60)]
+        // [HttpCacheExpiration(CacheLocation = CacheLocation.Public, MaxAge = 60)]
+        // [HttpCacheValidation(MustRevalidate = false)]
         public async Task<ActionResult<IEnumerable<WeatherForecast>>> Get()
         {
-            var entities = _context.WeatherForecasts.ToArray();
+                var entities = _context.WeatherForecasts.ToArray();
             return Ok(entities);
         }
     }
