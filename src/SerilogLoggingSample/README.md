@@ -6,27 +6,44 @@ Tips and tricks to write logs.
 
 ### What makes logging “effective”?
 
-- **Good, consistent Information:** an entry contains all of the information that might be pertinent to understanding
-  the event. If an exception occurs, we should know about the route or page it occurred on, any parameters that may have
+- **Good, consistent Information:** an entry contains all of the information that might be
+  pertinent to understanding
+  the event. If an exception occurs, we should know about the route or page it occurred
+  on, any parameters that may have
   influenced the behavior and even the user that was logged in;
-- **Keeps application code clean:** We should have application code that is easy to read without having to navigate lots
-  of exception handling or logging logic. A corollary here is that the act of logging should not affect the performance
+- **Keeps application code clean:** We should have application code that is easy to read
+  without having to navigate lots
+  of exception handling or logging logic. A corollary here is that the act of logging
+  should not affect the performance
   or behavior of the application;
-- **Easily consumable:** This generally means some kind of web interface to review and summarize log entries and
-  generally not just entries that are getting written to the files on web servers themselves. Support people, testers,
-  developers, and sometimes business analysts or product managers should be able to see and review log entries;
-- Improves “fixability”: This often means that you can understand and fix the problem simply by looking at a log entry
-  and the code, and should rarely need to set up complex scenarios to reproduce a problem that was reported. Test the
-  fix, but making the fix should not require reproducing the problem as a general rule. Good logging can enable a much
+- **Easily consumable:** This generally means some kind of web interface to review and
+  summarize log entries and
+  generally not just entries that are getting written to the files on web servers
+  themselves. Support people, testers,
+  developers, and sometimes business analysts or product managers should be able to see
+  and review log entries;
+- Improves “fixability”: This often means that you can understand and fix the problem
+  simply by looking at a log entry
+  and the code, and should rarely need to set up complex scenarios to reproduce a problem
+  that was reported. Test the
+  fix, but making the fix should not require reproducing the problem as a general rule.
+  Good logging can enable a much
   deeper understanding of your application;
-- **Enables deeper understanding:**  Good logging can enable a much deeper understanding of your application. If you're
-  logging performance information for every API call, for example, you can easily start to see the volume of calls your
-  API is fielding, as well as the average, max, and min timings for those calls. Maybe your performance slows down
+- **Enables deeper understanding:**  Good logging can enable a much deeper understanding
+  of your application. If you're
+  logging performance information for every API call, for example, you can easily start to
+  see the volume of calls your
+  API is fielding, as well as the average, max, and min timings for those calls. Maybe
+  your performance slows down
   around noon, but the load doesn't really change;
-- **Adds data for priorization:** Having good log entries and aggregation techniques can help you sniff out anomalies
-  and feature usage. Having good aggregation means you have good information that can feed a prioritization process,
-  like which errors should you fix first, or what should be your next performance improvement area? This may be based on
-  sheer volume of occurrences or other things like which users are affected. But either way, you should have some data
+- **Adds data for priorization:** Having good log entries and aggregation techniques can
+  help you sniff out anomalies
+  and feature usage. Having good aggregation means you have good information that can feed
+  a prioritization process,
+  like which errors should you fix first, or what should be your next performance
+  improvement area? This may be based on
+  sheer volume of occurrences or other things like which users are affected. But either
+  way, you should have some data
   to support these types of decisions;
 
 ## Log Levels
@@ -44,7 +61,8 @@ Tips and tricks to write logs.
 
 ### Categories
 
-Used to apply logical groupings to log entries. Defining categories for your log entries can help you isolate entries
+Used to apply logical groupings to log entries. Defining categories for your log entries
+can help you isolate entries
 and events ocurring in a certain class.
 
 ```markdown
@@ -57,7 +75,8 @@ ILogger<ClassName>
 
 ### EventsIds
 
-Using **EventIds** can make it easy to see all of your log entries for a certain EventId or even a set of them.
+Using **EventIds** can make it easy to see all of your log entries for a certain EventId
+or even a set of them.
 
 ```markdown
 # Officially struct with Id and Name;
@@ -84,7 +103,8 @@ Resource:
 
 ## Scopes
 
-Groups a set of logical operations together for example, capturing everything inside a single transaction.
+Groups a set of logical operations together for example, capturing everything inside a
+single transaction.
 
 **Resources:**
 
@@ -110,12 +130,14 @@ Groups a set of logical operations together for example, capturing everything in
     ```
 
 - **Shield error details:**
-    - Provide some kind of “ID”;
-    - Log all details (mask sensitive);
+  - Provide some kind of “ID”;
+  - Log all details (mask sensitive);
 - **Global handling covert most scenarios:**
-    - Different between UI and API: The UI is going to need to show a user - friendly web page as a response, whereas an
-      API needs to let a programmatic caller know that a problem has ocurred and no user interface is involved;
-    - When developing API’s create an error handling Middleware;
+  - Different between UI and API: The UI is going to need to show a user - friendly web
+    page as a response, whereas an
+    API needs to let a programmatic caller know that a problem has ocurred and no user
+    interface is involved;
+  - When developing API’s create an error handling Middleware;
 
 **Resources:**
 

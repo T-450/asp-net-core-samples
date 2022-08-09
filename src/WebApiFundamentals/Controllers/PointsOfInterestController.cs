@@ -100,7 +100,10 @@ public class PointsOfInterestController : ControllerBase
             _mapper.Map<PointOfInterestDto>(finalPointOfInterest);
 
         return CreatedAtRoute("GetPointOfInterest",
-            new {cityId, pointOfInterestId = createdPointOfInterestToReturn.Id},
+            new
+            {
+                cityId, pointOfInterestId = createdPointOfInterestToReturn.Id
+            },
             createdPointOfInterestToReturn);
     }
 

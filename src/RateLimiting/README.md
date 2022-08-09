@@ -1,17 +1,23 @@
 ### What is Rate Limiting?
-The process of restricting the number of requests for a resource within a specific time window.
+
+The process of restricting the number of requests for a resource within a specific time
+window.
 
 ### Why use Rate Limiting?
 
-- **Commercial purposes to generate revenue:** if a user wants more requests they are forced to upgrade the plan;
-- **Protection against malicious bot attacks:** A hacker can use bots to make a repeated calls to an API endpoint -
+- **Commercial purposes to generate revenue:** if a user wants more requests they are
+  forced to upgrade the plan;
+- **Protection against malicious bot attacks:** A hacker can use bots to make a repeated
+  calls to an API endpoint -
   making the service unavailable, also called DOS (Denial of Service).
-- **Regulate traffic according to infrastructure availability** :  Very used by cloud-base APIs that uses the "pay as
+- **Regulate traffic according to infrastructure availability** :  Very used by cloud-base
+  APIs that uses the "pay as
   you go" IaaS (Infrastructure as a Service).
 
 ### Implementation
 
-Asp.Net Core 6 does not support Rate Limiting out of the box, instead it provides middleware extensibility options for
+Asp.Net Core 6 does not support Rate Limiting out of the box, instead it provides
+middleware extensibility options for
 this purpose.
 
 1 - Create a decorator to decorate the endpoint to throttle;
@@ -29,7 +35,8 @@ this purpose.
 ```
 
 2 - Apply the decorator to the endpoint we want to throttle;
-3 - Configure the endpoint with the MaxRequests and TimeWindow. In the example below, we configured so that we only
+3 - Configure the endpoint with the MaxRequests and TimeWindow. In the example below, we
+configured so that we only
 receive 2 requests for a window of 5 seconds;
 
 ```cs
@@ -48,7 +55,8 @@ public class TestController : ControllerBase
 }
 ```
 
-4 - Create the class RateLimitingMiddleware.cs as a custom middleware that contains the logic for rate limiting;
+4 - Create the class RateLimitingMiddleware.cs as a custom middleware that contains the
+logic for rate limiting;
 
 ```cs
 public class RateLimitingMiddleware
@@ -146,12 +154,16 @@ app.Run();
 
 Now you can make requests to your endpoint and see if it works.
 
-You can see a working example [here](https://github.com/edward-teixeira/asp-net-core-samples/tree/master/src/RateLimiting);
+You can see a working
+example [here](https://github.com/edward-teixeira/asp-net-core-samples/tree/master/src/RateLimiting)
+;
 
 Links:
+
 - [The NEW Rate Limiter of .NET 7 is AWESOME](http://obsidian.md)
 - [DOS - Denial of Service](https://en.wikipedia.org/wiki/Denial-of-service_attack)
 - [What is IaaS?](https://azure.microsoft.com/en-us/overview/what-is-iaas)
 - [Rate Limiting in ASP.NET Core Web API](https://code-maze.com/aspnetcore-web-api-rate-limiting/)
 - [How to Design a Scalable Rate Limiting Algorithm with Kong API](https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm)
-- [Source](https://github.com/edward-teixeira/asp-net-core-samples/tree/master/src/RateLimiting);
+- [Source](https://github.com/edward-teixeira/asp-net-core-samples/tree/master/src/RateLimiting)
+  ;

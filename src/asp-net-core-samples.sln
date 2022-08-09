@@ -1,16 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationPatternExample", "NotificationPatternExample\NotificationPatternExample.csproj", "{D8A9665C-8CB7-4D96-A30C-EFFF8A459512}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload", "FileUpload\FileUpload.csproj", "{5433969F-B281-40F1-A45C-B46629C9DE8D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiFundamentals", "WebApiFundamentals\WebApiFundamentals.csproj", "{FDC9D3EA-980F-4AA8-8C0C-C7323CE4E603}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateLimiting", "RateLimiting\RateLimiting.csproj", "{7C77EAAE-CD43-4355-BCDD-0C153B87BEAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientFactorySample", "HttpClientFactorySample\HttpClientFactorySample.csproj", "{2965ED6E-A78B-40E5-AF88-458406CF32D8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerilogLoggingSample", "SerilogLoggingSample\SerilogLoggingSample.csproj", "{600C4564-9E81-4818-AF4F-60673433AC35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientSample", "HttpClientSample\HttpClientSample.csproj", "{33450F3E-0819-4F1B-A602-581106D7641F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,10 +16,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D8A9665C-8CB7-4D96-A30C-EFFF8A459512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8A9665C-8CB7-4D96-A30C-EFFF8A459512}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8A9665C-8CB7-4D96-A30C-EFFF8A459512}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8A9665C-8CB7-4D96-A30C-EFFF8A459512}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5433969F-B281-40F1-A45C-B46629C9DE8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5433969F-B281-40F1-A45C-B46629C9DE8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5433969F-B281-40F1-A45C-B46629C9DE8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -34,13 +28,13 @@ Global
 		{7C77EAAE-CD43-4355-BCDD-0C153B87BEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C77EAAE-CD43-4355-BCDD-0C153B87BEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C77EAAE-CD43-4355-BCDD-0C153B87BEAB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2965ED6E-A78B-40E5-AF88-458406CF32D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2965ED6E-A78B-40E5-AF88-458406CF32D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2965ED6E-A78B-40E5-AF88-458406CF32D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2965ED6E-A78B-40E5-AF88-458406CF32D8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{600C4564-9E81-4818-AF4F-60673433AC35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{600C4564-9E81-4818-AF4F-60673433AC35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{600C4564-9E81-4818-AF4F-60673433AC35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{600C4564-9E81-4818-AF4F-60673433AC35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33450F3E-0819-4F1B-A602-581106D7641F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33450F3E-0819-4F1B-A602-581106D7641F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33450F3E-0819-4F1B-A602-581106D7641F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33450F3E-0819-4F1B-A602-581106D7641F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
