@@ -21,9 +21,7 @@ public class CitiesDataStore
                 {
                     new()
                     {
-                        Id = 1,
-                        Name = "Central Park",
-                        Description = "The most visited urban park in the United States."
+                        Id = 1, Name = "Central Park", Description = "The most visited urban park in the United States."
                     },
                     new()
                     {
@@ -69,7 +67,10 @@ public class CitiesDataStore
                         Description =
                             "A wrought iron lattice tower on the Champ de Mars, named after engineer Gustave Eiffel."
                     },
-                    new() {Id = 6, Name = "The Louvre", Description = "The world's largest museum."}
+                    new()
+                    {
+                        Id = 6, Name = "The Louvre", Description = "The world's largest museum."
+                    }
                 }
             }
         };

@@ -44,9 +44,7 @@ builder.Services.AddSwaggerGen(setupAction =>
     setupAction.AddSecurityDefinition("CityInfoApiBearerAuth",
         new OpenApiSecurityScheme
         {
-            Type = SecuritySchemeType.Http,
-            Scheme = "Bearer",
-            Description = "Input a valid token to access this API"
+            Type = SecuritySchemeType.Http, Scheme = "Bearer", Description = "Input a valid token to access this API"
         });
 
     setupAction.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -54,7 +52,10 @@ builder.Services.AddSwaggerGen(setupAction =>
         {
             new OpenApiSecurityScheme
             {
-                Reference = new OpenApiReference {Type = ReferenceType.SecurityScheme, Id = "CityInfoApiBearerAuth"}
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme, Id = "CityInfoApiBearerAuth"
+                }
             },
             new List<string>()
         }

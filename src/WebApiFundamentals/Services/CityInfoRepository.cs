@@ -40,7 +40,7 @@ public class CityInfoRepository : ICityInfoRepository
         {
             searchQuery = searchQuery.Trim();
             collection = collection.Where(a => a.Name.Contains(searchQuery)
-                                               || (a.Description != null && a.Description.Contains(searchQuery)));
+                                               || a.Description != null && a.Description.Contains(searchQuery));
         }
 
         var totalItemCount = await collection.CountAsync();

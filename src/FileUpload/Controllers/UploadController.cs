@@ -16,7 +16,12 @@ public class UploadController : ControllerBase
     private readonly FileUploadService _fileUploadService;
     private readonly ILogger<UploadController> _logger;
     private readonly int _maxAllowedFileSize;
-    private readonly string[] _permittedExtensions = {".jpg", ".png", "jpeg", ".mkv"};
+
+    private readonly string[] _permittedExtensions =
+    {
+        ".jpg", ".png", "jpeg", ".mkv"
+    };
+
     private readonly string _targetFilePath;
 
     public UploadController(ILogger<UploadController> logger, IConfiguration config,

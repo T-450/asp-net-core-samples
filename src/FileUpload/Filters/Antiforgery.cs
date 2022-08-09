@@ -20,7 +20,10 @@ public class Antiforgery
             context.HttpContext.Response.Cookies.Append(
                 "RequestVerificationToken",
                 tokens.RequestToken,
-                new CookieOptions {HttpOnly = false});
+                new CookieOptions
+                {
+                    HttpOnly = false
+                });
         }
 
         public override void OnResultExecuted(ResultExecutedContext context)

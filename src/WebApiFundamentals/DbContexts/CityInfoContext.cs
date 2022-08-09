@@ -17,12 +17,18 @@ public class CityInfoContext : DbContext
     {
         modelBuilder.Entity<City>()
             .HasData(
-                new City("New York City") {Id = 1, Description = "The one with that big park."},
+                new City("New York City")
+                {
+                    Id = 1, Description = "The one with that big park."
+                },
                 new City("Antwerp")
                 {
                     Id = 2, Description = "The one with the cathedral that was never really finished."
                 },
-                new City("Paris") {Id = 3, Description = "The one with that big tower."});
+                new City("Paris")
+                {
+                    Id = 3, Description = "The one with that big tower."
+                });
 
         modelBuilder.Entity<PointOfInterest>()
             .HasData(
@@ -51,7 +57,10 @@ public class CityInfoContext : DbContext
                     Description =
                         "A wrought iron lattice tower on the Champ de Mars, named after engineer Gustave Eiffel."
                 },
-                new PointOfInterest("The Louvre") {Id = 6, CityId = 3, Description = "The world's largest museum."}
+                new PointOfInterest("The Louvre")
+                {
+                    Id = 6, CityId = 3, Description = "The world's largest museum."
+                }
             );
         base.OnModelCreating(modelBuilder);
     }
