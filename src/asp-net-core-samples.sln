@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWTAPI", "JWTAPI\JWTAPI.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWTAPI.Tests", "JWTAPI.Tests\JWTAPI.Tests.csproj", "{A8463E1A-695A-4061-A455-C392BB209F53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.NetCore.Identity.Sample", "Asp.NetCore.Identity.Sample\Asp.NetCore.Identity.Sample.csproj", "{F659B1E4-524A-4F74-98C9-C54479B41C23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{A8463E1A-695A-4061-A455-C392BB209F53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8463E1A-695A-4061-A455-C392BB209F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8463E1A-695A-4061-A455-C392BB209F53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F659B1E4-524A-4F74-98C9-C54479B41C23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F659B1E4-524A-4F74-98C9-C54479B41C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F659B1E4-524A-4F74-98C9-C54479B41C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F659B1E4-524A-4F74-98C9-C54479B41C23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
