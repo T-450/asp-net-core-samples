@@ -9,10 +9,25 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
+{
+    var env = hostingContext.HostingEnvironment;
+    config.SetBasePath(env.ContentRootPath)
+        .AddJsonFile("appsettings.json", true, true)
+        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true, true)
+        .AddEnvironmentVariables();
+    if (args != null)
+    {
+        config.AddCommandLine(args);
+    }
+});
+
 // Add services to the container.
 // Register DB Context
 builder.Services.AddDbContext<ApplicationDbContext>(o =>
-    o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    o.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+
+#region IdentityConfig
 
 // Load appsettings.json values
 var appSettingsSection = builder.Configuration.GetSection("AppSettings");
@@ -45,6 +60,8 @@ builder.Services.AddAuthentication(o =>
     };
 });
 
+#endregion
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -57,7 +74,6 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

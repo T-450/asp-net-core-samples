@@ -26,7 +26,6 @@
 
   <ItemGroup>
     <Folder Include="Configuration"/>
-    <Folder Include="Utils"/>
   </ItemGroup>
 
 </Project>

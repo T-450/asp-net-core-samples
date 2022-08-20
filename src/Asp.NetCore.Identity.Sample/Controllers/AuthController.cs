@@ -12,9 +12,8 @@ using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegiste
 
 namespace Asp.NetCore.Identity.Sample.Controllers;
 
-[ApiController]
 [Route("api/identity")]
-public class AuthController : ControllerBase
+public class AuthController : MainController
 {
     private readonly AppSettings _appSettings;
     private readonly SignInManager<IdentityUser> _signInManager;
@@ -33,16 +32,27 @@ public class AuthController : ControllerBase
     {
         if (!ModelState.IsValid)
         {
-            return BadRequest();
+            return CustomResponse(ModelState);
         }
 
         IdentityUser user = new()
         {
             UserName = signupUser.Email, Email = signupUser.Email, EmailConfirmed = true
         };
+
         var result = await _userManager.CreateAsync(user, signupUser.Password).ConfigureAwait(false);
 
-        return result.Succeeded ? Ok(await GenerateJwt(signupUser.Email).ConfigureAwait(false)) : BadRequest();
+        if (result.Succeeded)
+        {
+            return Ok(await GenerateJwt(signupUser.Email).ConfigureAwait(false));
+        }
+
+        foreach (var identityError in result.Errors)
+        {
+            AddErrors(identityError.Description);
+        }
+
+        return CustomResponse();
     }
 
     [HttpPost("login")]
@@ -50,14 +60,38 @@ public class AuthController : ControllerBase
     {
         if (!ModelState.IsValid)
         {
-            return BadRequest();
+            return CustomResponse(ModelState);
         }
 
         var result = await _signInManager
             .PasswordSignInAsync(signInUser.Email, signInUser.Password, true, false)
             .ConfigureAwait(false);
 
-        return result.Succeeded ? Ok(await GenerateJwt(signInUser.Email).ConfigureAwait(false)) : BadRequest();
+        if (result.Succeeded)
+        {
+            return Ok(await GenerateJwt(signInUser.Email).ConfigureAwait(false));
+        }
+
+        if (result.IsLockedOut)
+        {
+            AddErrors("User is temporarily blocked.");
+            return CustomResponse();
+        }
+
+        if (result.IsNotAllowed)
+        {
+            AddErrors("User is not allowed to sign-in..");
+            return CustomResponse();
+        }
+
+        if (result.RequiresTwoFactor)
+        {
+            AddErrors("Attempting to sign-in requires two factor authentication");
+            return CustomResponse();
+        }
+
+        AddErrors("Invalid Username or Password.");
+        return CustomResponse();
     }
 
     private async ValueTask<UserSignInResponse> GenerateJwt(string email)
@@ -95,8 +129,8 @@ public class AuthController : ControllerBase
             Expires = DateTime.UtcNow.AddHours(_appSettings.ExpirationHours),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(keyEncoded), SecurityAlgorithms.HmacSha256)
         });
-
         var tokenEncoded = tokenHandler.WriteToken(token);
+
         UserSignInResponse payload = new()
         {
             AccessToken = tokenEncoded,
