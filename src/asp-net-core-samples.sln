@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Microservice", "Mic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.WebApi", "Microservice_Architecture_in_ASP.NET_Core_with_API_Gateway\Gateway.WebApi\Gateway.WebApi.csproj", "{9385EB64-9D92-4F1E-9450-64F52968B375}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Background.Tasks.WebApi", "Background.Tasks.WebApi\Background.Tasks.WebApi.csproj", "{33335AA8-139E-4907-98E9-D1D567DF9619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elastic.Kibana.Serilog", "ElasticSearch-Kibana-ASP-NET-Core-and-Docker\src\Elastic.Kibana.Serilog\Elastic.Kibana.Serilog\Elastic.Kibana.Serilog.csproj", "{6DD33C8E-EDA0-4F09-8950-EE8BBB8059F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +83,14 @@ Global
 		{9385EB64-9D92-4F1E-9450-64F52968B375}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9385EB64-9D92-4F1E-9450-64F52968B375}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9385EB64-9D92-4F1E-9450-64F52968B375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33335AA8-139E-4907-98E9-D1D567DF9619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33335AA8-139E-4907-98E9-D1D567DF9619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33335AA8-139E-4907-98E9-D1D567DF9619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33335AA8-139E-4907-98E9-D1D567DF9619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DD33C8E-EDA0-4F09-8950-EE8BBB8059F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DD33C8E-EDA0-4F09-8950-EE8BBB8059F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DD33C8E-EDA0-4F09-8950-EE8BBB8059F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DD33C8E-EDA0-4F09-8950-EE8BBB8059F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5E780C33-C786-46FB-BC25-7D9BC1E7437D} = {64D9B179-9B8A-401D-90EC-6B17B5EE00B4}
