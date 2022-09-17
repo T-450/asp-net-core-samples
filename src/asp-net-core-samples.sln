@@ -16,6 +16,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWTAPI.Tests", "JWTAPI.Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.NetCore.Identity.Sample", "Asp.NetCore.Identity.Sample\Asp.NetCore.Identity.Sample.csproj", "{F659B1E4-524A-4F74-98C9-C54479B41C23}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspNetCore_Microservice_With_ApiGateway", "AspNetCore_Microservice_With_ApiGateway", "{64D9B179-9B8A-401D-90EC-6B17B5EE00B4}"
+	ProjectSection(SolutionItems) = preProject
+		Microservice_Architecture_in_ASP.NET_Core_with_API_Gateway\README.md = Microservice_Architecture_in_ASP.NET_Core_with_API_Gateway\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5E780C33-C786-46FB-BC25-7D9BC1E7437D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Microservice", "Microservice_Architecture_in_ASP.NET_Core_with_API_Gateway\Customer.Microservice\Customer.Microservice.csproj", "{B935AB41-D461-4BE9-A2D2-98673FC3DA89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Microservice", "Microservice_Architecture_in_ASP.NET_Core_with_API_Gateway\Product.Microservice\Product.Microservice.csproj", "{689EDEBB-C960-46A4-813C-D7DE7A45AEC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.WebApi", "Microservice_Architecture_in_ASP.NET_Core_with_API_Gateway\Gateway.WebApi\Gateway.WebApi.csproj", "{9385EB64-9D92-4F1E-9450-64F52968B375}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,7 +67,23 @@ Global
 		{F659B1E4-524A-4F74-98C9-C54479B41C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F659B1E4-524A-4F74-98C9-C54479B41C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F659B1E4-524A-4F74-98C9-C54479B41C23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B935AB41-D461-4BE9-A2D2-98673FC3DA89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B935AB41-D461-4BE9-A2D2-98673FC3DA89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B935AB41-D461-4BE9-A2D2-98673FC3DA89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B935AB41-D461-4BE9-A2D2-98673FC3DA89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689EDEBB-C960-46A4-813C-D7DE7A45AEC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{689EDEBB-C960-46A4-813C-D7DE7A45AEC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{689EDEBB-C960-46A4-813C-D7DE7A45AEC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{689EDEBB-C960-46A4-813C-D7DE7A45AEC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9385EB64-9D92-4F1E-9450-64F52968B375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9385EB64-9D92-4F1E-9450-64F52968B375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9385EB64-9D92-4F1E-9450-64F52968B375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9385EB64-9D92-4F1E-9450-64F52968B375}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{5E780C33-C786-46FB-BC25-7D9BC1E7437D} = {64D9B179-9B8A-401D-90EC-6B17B5EE00B4}
+		{B935AB41-D461-4BE9-A2D2-98673FC3DA89} = {5E780C33-C786-46FB-BC25-7D9BC1E7437D}
+		{689EDEBB-C960-46A4-813C-D7DE7A45AEC8} = {5E780C33-C786-46FB-BC25-7D9BC1E7437D}
+		{9385EB64-9D92-4F1E-9450-64F52968B375} = {64D9B179-9B8A-401D-90EC-6B17B5EE00B4}
 	EndGlobalSection
 EndGlobal
